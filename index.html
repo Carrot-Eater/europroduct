@@ -1,0 +1,1179 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>휴(HEW) 관리 페이지</title>
+    <link rel="icon" type="image/x-icon" href="https://r2.order-app.workers.dev/profile/4e4729d2841b4e7099492a5bab4eccc055.png">
+    <link href="https://euro.order-app.us/static/layouts/vertical-light-menu/css/light/loader.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/layouts/vertical-light-menu/css/dark/loader.css" rel="stylesheet" type="text/css">
+    <script src="https://euro.order-app.us/static/layouts/vertical-light-menu/loader.js"></script>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="https://euro.order-app.us/static/src/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/layouts/vertical-light-menu/css/light/plugins.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/layouts/vertical-light-menu/css/dark/plugins.css" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link href="https://euro.order-app.us/static/src/plugins/src/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/light/dashboard/dash_1.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/dark/dashboard/dash_1.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="https://euro.order-app.us/static/src/plugins/src/animate/animate.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="https://euro.order-app.us/static/src/plugins/src/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/plugins/src/noUiSlider/nouislider.min.css" rel="stylesheet" type="text/css">
+    <!-- END THEME GLOBAL STYLES -->
+            
+    <!--  BEGIN CUSTOM STYLE FILE  -->
+    <link href="https://euro.order-app.us/static/src/assets/css/light/components/carousel.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/light/components/tabs.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/plugins/css/light/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+    
+    <link href="https://euro.order-app.us/static/src/assets/css/dark/components/carousel.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/assets/css/dark/components/tabs.css" rel="stylesheet" type="text/css">
+    <link href="https://euro.order-app.us/static/src/plugins/css/dark/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+    <!--  END CUSTOM STYLE FILE  -->        
+
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href="https://euro.order-app.us/static/src/plugins/src/table/datatable/datatables.css">
+
+    <link rel="stylesheet" type="text/css" href="https://euro.order-app.us/static/src/plugins/css/light/table/datatable/dt-global_style.css">
+    <link rel="stylesheet" type="text/css" href="https://euro.order-app.us/static/src/plugins/css/dark/table/datatable/dt-global_style.css">
+    <!-- END PAGE LEVEL STYLES -->        
+    <link rel="stylesheet" type="text/css" href="https://euro.order-app.us/static/src/assets/css/light/forms/switches.css">
+    <link rel="stylesheet" type="text/css" href="https://euro.order-app.us/static/src/assets/css/dark/forms/switches.css">
+
+
+<style id="apexcharts-css">.apexcharts-canvas {
+position: relative;
+user-select: none;
+/* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+-webkit-appearance: none;
+width: 6px;
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+border-radius: 4px;
+background-color: rgba(0, 0, 0, .5);
+box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+.apexcharts-inner {
+position: relative;
+}
+
+.apexcharts-text tspan {
+font-family: inherit;
+}
+
+.legend-mouseover-inactive {
+transition: 0.15s ease all;
+opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+opacity: 0;
+}
+
+.apexcharts-tooltip {
+border-radius: 5px;
+box-shadow: 2px 2px 6px -4px #999;
+cursor: default;
+font-size: 14px;
+left: 62px;
+opacity: 0;
+pointer-events: none;
+position: absolute;
+top: 20px;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+white-space: nowrap;
+z-index: 12;
+transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-active {
+opacity: 1;
+transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+border: 1px solid #e3e3e3;
+background: rgba(255, 255, 255, 0.96);
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+color: #fff;
+background: rgba(30, 30, 30, 0.8);
+}
+
+.apexcharts-tooltip * {
+font-family: inherit;
+}
+
+
+.apexcharts-tooltip-title {
+padding: 6px;
+font-size: 15px;
+margin-bottom: 4px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+background: #ECEFF1;
+border-bottom: 1px solid #ddd;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+background: rgba(0, 0, 0, 0.7);
+border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+display: inline-block;
+font-weight: 600;
+margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-y-label:empty,
+.apexcharts-tooltip-text-y-value:empty,
+.apexcharts-tooltip-text-goals-label:empty,
+.apexcharts-tooltip-text-goals-value:empty,
+.apexcharts-tooltip-text-z-value:empty {
+display: none;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+font-weight: 600;
+}
+
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-goals-group, 
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+display: flex;
+}
+.apexcharts-tooltip-text-goals-label:not(:empty),
+.apexcharts-tooltip-text-goals-value:not(:empty) {
+margin-top: -6px;
+}
+
+.apexcharts-tooltip-marker {
+width: 12px;
+height: 12px;
+position: relative;
+top: 0px;
+margin-right: 10px;
+border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+padding: 0 10px;
+display: none;
+text-align: left;
+justify-content: left;
+align-items: center;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+opacity: 1;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+padding-bottom: 4px;
+}
+
+.apexcharts-tooltip-series-group-hidden {
+opacity: 0;
+height: 0;
+line-height: 0;
+padding: 0 !important;
+}
+
+.apexcharts-tooltip-y-group {
+padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-box, .apexcharts-custom-tooltip {
+padding: 4px 8px;
+}
+
+.apexcharts-tooltip-boxPlot {
+display: flex;
+flex-direction: column-reverse;
+}
+
+.apexcharts-tooltip-box>div {
+margin: 4px 0;
+}
+
+.apexcharts-tooltip-box span.value {
+font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+font-weight: 600;
+color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+font-weight: bold;
+display: block;
+margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+opacity: 0;
+padding: 9px 10px;
+pointer-events: none;
+color: #373d3f;
+font-size: 13px;
+text-align: center;
+border-radius: 2px;
+position: absolute;
+z-index: 10;
+background: #ECEFF1;
+border: 1px solid #90A4AE;
+transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+background: rgba(0, 0, 0, 0.7);
+border: 1px solid rgba(0, 0, 0, 0.5);
+color: #fff;
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+left: 50%;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+border-color: rgba(236, 239, 241, 0);
+border-width: 6px;
+margin-left: -6px;
+}
+
+.apexcharts-xaxistooltip:before {
+border-color: rgba(144, 164, 174, 0);
+border-width: 7px;
+margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+border-bottom-color: #ECEFF1;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after {
+border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+border-top-color: #ECEFF1
+}
+
+.apexcharts-xaxistooltip-top:before {
+border-top-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after {
+border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+opacity: 1;
+transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+opacity: 0;
+padding: 4px 10px;
+pointer-events: none;
+color: #373d3f;
+font-size: 13px;
+text-align: center;
+border-radius: 2px;
+position: absolute;
+z-index: 10;
+background: #ECEFF1;
+border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+background: rgba(0, 0, 0, 0.7);
+border: 1px solid rgba(0, 0, 0, 0.5);
+color: #fff;
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+top: 50%;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+}
+
+.apexcharts-yaxistooltip:after {
+border-color: rgba(236, 239, 241, 0);
+border-width: 6px;
+margin-top: -6px;
+}
+
+.apexcharts-yaxistooltip:before {
+border-color: rgba(144, 164, 174, 0);
+border-width: 7px;
+margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+border-left-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-left:before {
+border-left-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after {
+border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+border-right-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-right:before {
+border-right-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after {
+border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+opacity: 1;
+}
+
+.apexcharts-yaxistooltip-hidden {
+display: none;
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+pointer-events: none;
+opacity: 0;
+transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+opacity: 1;
+transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+opacity: 0;
+}
+
+.apexcharts-selection-rect {
+cursor: move;
+}
+
+.svg_select_boundingRect, .svg_select_points_rot {
+pointer-events: none;
+opacity: 0;
+visibility: hidden;
+}
+.apexcharts-selection-rect + g .svg_select_boundingRect,
+.apexcharts-selection-rect + g .svg_select_points_rot {
+opacity: 0;
+visibility: hidden;
+}
+
+.apexcharts-selection-rect + g .svg_select_points_l,
+.apexcharts-selection-rect + g .svg_select_points_r {
+cursor: ew-resize;
+opacity: 1;
+visibility: visible;
+}
+
+.svg_select_points {
+fill: #efefef;
+stroke: #333;
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+cursor: move
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon,
+.apexcharts-reset-icon,
+.apexcharts-pan-icon,
+.apexcharts-selection-icon,
+.apexcharts-menu-icon,
+.apexcharts-toolbar-custom-icon {
+cursor: pointer;
+width: 20px;
+height: 20px;
+line-height: 24px;
+color: #6E8192;
+text-align: center;
+}
+
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-menu-icon svg {
+fill: #6E8192;
+}
+
+.apexcharts-selection-icon svg {
+fill: #444;
+transform: scale(0.76)
+}
+
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg {
+fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg {
+fill: #008FFB;
+}
+
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg {
+fill: #333;
+}
+
+.apexcharts-selection-icon,
+.apexcharts-menu-icon {
+position: relative;
+}
+
+.apexcharts-reset-icon {
+margin-left: 5px;
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-reset-icon,
+.apexcharts-menu-icon {
+transform: scale(0.85);
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+transform: scale(0.7)
+}
+
+.apexcharts-zoomout-icon {
+margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+transform: scale(0.62);
+position: relative;
+left: 1px;
+top: 0px;
+}
+
+.apexcharts-pan-icon svg {
+fill: #fff;
+stroke: #6E8192;
+stroke-width: 2;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+stroke: #008FFB;
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+stroke: #333;
+}
+
+.apexcharts-toolbar {
+position: absolute;
+z-index: 11;
+max-width: 176px;
+text-align: right;
+border-radius: 3px;
+padding: 0px 6px 2px 6px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.apexcharts-menu {
+background: #fff;
+position: absolute;
+top: 100%;
+border: 1px solid #ddd;
+border-radius: 3px;
+padding: 3px;
+right: 10px;
+opacity: 0;
+min-width: 110px;
+transition: 0.15s ease all;
+pointer-events: none;
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+opacity: 1;
+pointer-events: all;
+transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+padding: 6px 7px;
+font-size: 12px;
+cursor: pointer;
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+background: #eee;
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+background: rgba(0, 0, 0, 0.7);
+color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+.apexcharts-canvas:hover .apexcharts-toolbar {
+opacity: 1;
+}
+}
+
+.apexcharts-datalabel.apexcharts-element-hidden {
+opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabels,
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+cursor: default;
+pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+opacity: 0;
+animation-name: opaque;
+animation-duration: 0.3s;
+animation-fill-mode: forwards;
+animation-timing-function: ease;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+opacity: 0;
+}
+
+.apexcharts-gridline,
+.apexcharts-annotation-rect,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line,
+.apexcharts-zoom-rect,
+.apexcharts-toolbar svg,
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-radar-series path,
+.apexcharts-radar-series polygon {
+pointer-events: none;
+}
+
+
+/* markers */
+
+.apexcharts-marker {
+transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+
+/* Resize generated styles */
+
+@keyframes resizeanim {
+from {
+opacity: 0;
+}
+to {
+opacity: 0;
+}
+}
+
+.resize-triggers {
+animation: 1ms resizeanim;
+visibility: hidden;
+opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+content: " ";
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+overflow: hidden;
+}
+
+.resize-triggers>div {
+background: #eee;
+overflow: auto;
+}
+
+.contract-trigger:before {
+width: 200%;
+height: 200%;
+}</style></head>
+<body class="" layout="full-width">
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="https://euro.order-app.us/static/src/plugins/src/global/vendors.min.js"></script>
+    <script src="https://euro.order-app.us/static/src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://euro.order-app.us/static/src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="https://euro.order-app.us/static/src/plugins/src/mousetrap/mousetrap.min.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN LOADER -->
+    
+    <!--  END LOADER -->
+
+    <!--  BEGIN NAVBAR  -->
+    <div class="header-container">
+        <header class="header navbar navbar-expand-sm">
+            <a href="javascript:void(0);" class="sidebarCollapse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </a>
+
+            <ul class="navbar-item flex-row ms-lg-auto ms-0">
+                <li class="nav-item theme-toggle-item">
+                    <a href="javascript:void(0);" class="nav-link theme-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon dark-mode"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun light-mode"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </a>
+                </li>
+                <li class="nav-item dropdown notification-dropdown">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><!--<span class="badge badge-success"></span>-->
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar-container">
+                            <div class="avatar avatar-sm avatar-indicators avatar-online">
+                                
+                                <img alt="avatar" src="https://r2.order-app.workers.dev/profile/4e4729d2841b4e7099492a5bab4eccc055.png" class="rounded-circle">
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
+                        <div class="user-profile-section">
+                            <div class="media mx-auto">
+                                <div class="media-body">
+                                    <h5>휴(HEW)</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="/profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span>프로필</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="#" onclick="return onLogoutButton();">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>로그아웃</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </li>
+            </ul>
+        </header>
+    </div>
+    <!--  END NAVBAR  -->
+    
+<!--  BEGIN MAIN CONTAINER  -->
+<div class="main-container" id="container">
+
+<div class="overlay"></div>
+<div class="search-overlay"></div>
+
+<!--  BEGIN SIDEBAR  -->
+<div class="sidebar-wrapper sidebar-theme">
+    <nav id="sidebar">
+        <div class="navbar-nav theme-brand flex-row  text-center">
+            <div class="nav-logo">
+                <div class="nav-item theme-logo">
+                    <a href="/">
+                        <img src="https://r2.order-app.workers.dev/profile/4e4729d2841b4e7099492a5bab4eccc055.png">
+                    </a>
+                </div>
+            </div>
+            <div class="nav-item sidebar-toggle">
+                <div class="nav-logo">
+                    <div class="btn-toggle sidebarCollapse">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shadow-bottom"></div> -->
+        <div class="navbar-nav theme-brand flex-row text-center">
+            <div class="nav-item theme-text">
+                <a href="/" class="nav-link">휴(HEW)</a>
+            </div>
+        </div>
+        <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>DASHBOARD</span></div>
+            </li>
+            <li class="menu">
+                <a href="/" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>정보</span></div>
+            </li>
+            <li class="menu">
+                <a href="#board" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        <span>정보 게시판</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="board" data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="/notice">공지사항</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>매장</span></div>
+            </li>
+            
+            <li class="menu active">
+                <a href="#sales" data-bs-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <span>매출조회</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled show" id="sales" data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="days"> 일자별 매출 </a>
+                    </li>
+                    <li class="active">
+                        <a href="product"> 상품별 매출 </a>
+                    </li>
+                </ul>
+            </li>
+                            
+            <li class="menu">
+                <a href="/devices" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>등록기기</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu">
+                <a href="#coffee" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        <span>상품관리</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="coffee" data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="/menu/category">카테고리</a>
+                    </li>
+                    <li>
+                        <a href="/menu">메뉴</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="menu">
+                <a href="/adein" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg>
+                        <span>애드인 기능(유료)</span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>사용자 정보</span></div>
+            </li>
+            <li class="menu">
+                <a href="#profile" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span>사용자</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="profile" data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="/profile">프로필</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu">
+                <a href="#" aria-expanded="false" class="dropdown-toggle" onclick="return onLogoutButton();">
+                    <div class="" style="color: #e7515a;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e7515a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                        <span>로그아웃</span>
+                    </div>
+                </a>
+            </li>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        <div class="ps__rail-x" style="left: 0px; bottom: -253px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 253px; height: 632px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 316px; height: 300px;"></div></div></ul>
+    </nav>
+</div>
+<!--  END SIDEBAR  -->
+
+<!--  BEGIN CONTENT AREA  -->
+<div id="content" class="main-content">
+    <div class="layout-px-spacing">
+        <div class="middle-content p-0">
+            <!-- BREADCRUMB -->
+            <div class="page-meta">
+                <nav class="breadcrumb-style-one" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">매출조회</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">상품별 매출</li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- /BREADCRUMB -->
+            <div class="row layout-top-spacing">
+                <div class="col-12 layout-spacing">
+                    <div class="widget-four">
+                        <div class="row">
+                            <div class="col">
+                                <div class="widget-content">
+                                    <div class="col-12">
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_to_day" checked="">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                당일
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_day_before">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                전일
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_a_week_ago">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                1주일
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_this_month">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                당월
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_last_month">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                전월
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_this_year">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                금년
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-secondary form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio_last_year">
+                                            <label class="form-check-label" for="form-check-radio-secondary">
+                                                전년
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-10 col-sm-12">
+                                        <div class="input-group mb-3">
+                                            <input autocomplete="off" type="text" class="form-control flatpickr flatpickr-input active" id="search_start_date" placeholder="시작 일자" readonly="readonly">
+                                            <input autocomplete="off" type="text" class="form-control flatpickr flatpickr-input active" id="search_end_date" placeholder="끝 일자" readonly="readonly">
+                                            <button class="btn btn-secondary" id="search_button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="text-forms col-3" id="today_product_money">오늘 : 52,400원</div>
+                                        <div class="text-forms col-3" id="yesterday_product_money">어제 : 125,600원</div>
+                                        <div class="text-forms col-3" id="month_product_money">이번달 : 178,000원</div>
+                                        <div class="text-forms col-3" id="year_product_money">올해 : 3,562,200원</div>
+                                        <div class="text-forms col-3" id="all_product_money">전체 : 52,400원</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="widget-four">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="widget-heading">
+                                        <h5 class="">전체</h5>
+                                    </div>
+                                    <div class="widget-content">
+                                        <h4 class="" id="all_drink_count">총 판매량 : 19</h4>
+                                        <h4 class="" id="all_cold_drink_count">차가운 음료 : 11잔</h4>
+                                        <h4 class="" id="all_hot_drink_count">따뜻한 음료 : 8잔</h4>
+                                        <h4 class="" id="all_other_count">기타 : 0</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="widget-four">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="widget-heading">
+                                        <h5 class="">유료 판매</h5>
+                                    </div>
+                                    <div class="widget-content">
+                                        <h4 class="" id="paid_drink_count">총 판매량 : 18</h4>
+                                        <h4 class="" id="paid_cold_drink_count">차가운 음료 : 10잔</h4>
+                                        <h4 class="" id="paid_hot_drink_count">따뜻한 음료 : 8잔</h4>
+                                        <h4 class="" id="paid_other_count">기타 : 0</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 layout-spacing">
+                        <div class="widget-four">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="widget-heading">
+                                        <h5 class="">무료 판매</h5>
+                                    </div>
+                                    <div class="widget-content">
+                                        <h4 class="" id="free_drink_count">총 판매량 : 1</h4>
+                                        <h4 class="" id="free_cold_drink_count">차가운 음료 : 1잔</h4>
+                                        <h4 class="" id="free_hot_drink_count">따뜻한 음료 : 0잔</h4>
+                                        <h4 class="" id="free_other_count">기타 : 0</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 layout-spacing">
+                    <div class="widget-four">
+                        <div class="row">
+                            <div class="col">
+                                <div class="widget-heading">
+                                    <h5 class="">상품 매출</h5>
+                                </div>
+                                <div class="widget-content">
+                                    <div id="s-bar" class="" style="min-height: 365px;"><div id="apexcharts07lrl9ni" class="apexcharts-canvas apexcharts07lrl9ni apexcharts-theme-light" style="width: 783px; height: 350px;"><svg id="SvgjsSvg1229" width="783" height="350" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1231" class="apexcharts-inner apexcharts-graphical" transform="translate(159.0546875, 30)"><defs id="SvgjsDefs1230"><linearGradient id="SvgjsLinearGradient1235" x1="0" y1="0" x2="0" y2="1"><stop id="SvgjsStop1236" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop><stop id="SvgjsStop1237" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop><stop id="SvgjsStop1238" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop></linearGradient><clipPath id="gridRectMask07lrl9ni"><rect id="SvgjsRect1240" width="599.01171875" height="282.348" x="-2" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMask07lrl9ni"></clipPath><clipPath id="nonForecastMask07lrl9ni"></clipPath><clipPath id="gridRectMarkerMask07lrl9ni"><rect id="SvgjsRect1241" width="599.01171875" height="286.348" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><rect id="SvgjsRect1239" width="0" height="282.348" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke-dasharray="3" fill="url(#SvgjsLinearGradient1235)" class="apexcharts-xcrosshairs" y2="282.348" filter="none" fill-opacity="0.9"></rect><g id="SvgjsG1274" class="apexcharts-yaxis apexcharts-xaxis-inversed" rel="0"><g id="SvgjsG1275" class="apexcharts-yaxis-texts-g apexcharts-xaxis-inversed-texts-g" transform="translate(0, 0)"><text id="SvgjsText1276" font-family="Helvetica, Arial, sans-serif" x="-15" y="30.8016" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1277">연한 아메리카노(싱글)</tspan><title>연한 아메리카노(싱글)</title></text><text id="SvgjsText1278" font-family="Helvetica, Arial, sans-serif" x="-15" y="87.2712" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1279">연한아이스 아메리...</tspan><title>연한아이스 아메리카노(싱글)</title></text><text id="SvgjsText1280" font-family="Helvetica, Arial, sans-serif" x="-15" y="143.74079999999998" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1281">아이스바나나 초콜...</tspan><title>아이스바나나 초콜릿라떼</title></text><text id="SvgjsText1282" font-family="Helvetica, Arial, sans-serif" x="-15" y="200.2104" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1283">아이스카페모카(초코+...</tspan><title>아이스카페모카(초코+커피)</title></text><text id="SvgjsText1284" font-family="Helvetica, Arial, sans-serif" x="-15" y="256.68" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1285">아이스 카페라떼</tspan><title>아이스 카페라떼</title></text></g><line id="SvgjsLine1286" x1="0" y1="1" x2="0" y2="282.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1256" class="apexcharts-xaxis apexcharts-yaxis-inversed"><g id="SvgjsG1257" class="apexcharts-xaxis-texts-g" transform="translate(0, -8)"><text id="SvgjsText1258" font-family="Helvetica, Arial, sans-serif" x="595.01171875" y="312.348" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1260">16000</tspan><title>16000</title></text><text id="SvgjsText1261" font-family="Helvetica, Arial, sans-serif" x="446.1587890625" y="312.348" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1263">12000</tspan><title>12000</title></text><text id="SvgjsText1264" font-family="Helvetica, Arial, sans-serif" x="297.30585937500007" y="312.348" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1266">8000</tspan><title>8000</title></text><text id="SvgjsText1267" font-family="Helvetica, Arial, sans-serif" x="148.45292968750005" y="312.348" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1269">4000</tspan><title>4000</title></text><text id="SvgjsText1270" font-family="Helvetica, Arial, sans-serif" x="-0.39999999999997726" y="312.348" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1272">0</tspan><title>0</title></text></g><line id="SvgjsLine1273" x1="0" y1="282.348" x2="595.01171875" y2="282.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt"></line></g><g id="SvgjsG1287" class="apexcharts-grid"><g id="SvgjsG1288" class="apexcharts-gridlines-horizontal"><line id="SvgjsLine1295" x1="0" y1="0" x2="595.01171875" y2="0" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1296" x1="0" y1="56.4696" x2="595.01171875" y2="56.4696" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1297" x1="0" y1="112.9392" x2="595.01171875" y2="112.9392" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1298" x1="0" y1="169.40879999999999" x2="595.01171875" y2="169.40879999999999" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1299" x1="0" y1="225.8784" x2="595.01171875" y2="225.8784" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1300" x1="0" y1="282.348" x2="595.01171875" y2="282.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1289" class="apexcharts-gridlines-vertical"></g><line id="SvgjsLine1290" x1="0" y1="283.348" x2="0" y2="289.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1291" x1="149.0529296875" y1="283.348" x2="149.0529296875" y2="289.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1292" x1="298.105859375" y1="283.348" x2="298.105859375" y2="289.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1293" x1="447.15878906250003" y1="283.348" x2="447.15878906250003" y2="289.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1294" x1="596.21171875" y1="283.348" x2="596.21171875" y2="289.348" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-xaxis-tick"></line><line id="SvgjsLine1302" x1="0" y1="282.348" x2="595.01171875" y2="282.348" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1301" x1="0" y1="1" x2="0" y2="282.348" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1242" class="apexcharts-bar-series apexcharts-plot-series"><g id="SvgjsG1243" class="apexcharts-series" rel="1" seriesName="총x판매x금액" data:realIndex="0"><path id="SvgjsPath1247" d="M0.1 8.47044L572.7987792968751 8.47044Q572.7987792968751 8.47044 572.7987792968751 8.47044L572.7987792968751 47.99916Q572.7987792968751 47.99916 572.7987792968751 47.99916L572.7987792968751 47.99916L0.1 47.99916L0.1 47.99916L0.1 8.47044C0.1 8.47044 0.1 8.47044 0.1 8.47044C0.1 8.47044 0.1 8.470439999999996 0.1 8.470439999999996C0.1 8.470439999999996 0.1 8.470439999999996 0.1 8.470439999999996C0.1 8.470439999999996 0.1 8.470439999999996 0.1 8.470439999999996C0.1 8.470439999999996 0.1 8.470439999999996 0.1 8.470439999999996C0.1 8.470439999999996 0.1 8.470439999999996 0.1 8.470439999999996C0.1 8.470439999999996 0.1 8.47044 0.1 8.47044 " fill="rgba(0,143,251,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask07lrl9ni)" pathTo="M 0.1 8.47044L 572.7987792968751 8.47044Q 572.7987792968751 8.47044 572.7987792968751 8.47044L 572.7987792968751 47.99916Q 572.7987792968751 47.99916 572.7987792968751 47.99916L 572.7987792968751 47.99916L 0.1 47.99916L 0.1 47.99916z" pathFrom="M 0.1 8.47044L 572.7987792968751 8.47044Q 572.7987792968751 8.47044 572.7987792968751 8.47044L 572.7987792968751 47.99916Q 572.7987792968751 47.99916 572.7987792968751 47.99916L 572.7987792968751 47.99916L 0.1 47.99916L 0.1 47.99916zL 0.1 8.47044L 0.1 47.99916L 0.1 47.99916L 0.1 47.99916L 0.1 47.99916L 0.1 47.99916L 0.1 8.47044" cy="64.94004" cx="572.7987792968751" j="0" val="15400" barHeight="39.52872" barWidth="572.698779296875"></path><path id="SvgjsPath1249" d="M0.1 64.94004L279.0117431640625 64.94004Q279.0117431640625 64.94004 279.0117431640625 64.94004L279.0117431640625 104.46876Q279.0117431640625 104.46876 279.0117431640625 104.46876L279.0117431640625 104.46876L0.1 104.46876L0.1 104.46876L0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004C0.1 64.94004 0.1 64.94004 0.1 64.94004 " fill="rgba(0,143,251,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask07lrl9ni)" pathTo="M 0.1 64.94004L 279.0117431640625 64.94004Q 279.0117431640625 64.94004 279.0117431640625 64.94004L 279.0117431640625 104.46876Q 279.0117431640625 104.46876 279.0117431640625 104.46876L 279.0117431640625 104.46876L 0.1 104.46876L 0.1 104.46876z" pathFrom="M 0.1 64.94004L 279.0117431640625 64.94004Q 279.0117431640625 64.94004 279.0117431640625 64.94004L 279.0117431640625 104.46876Q 279.0117431640625 104.46876 279.0117431640625 104.46876L 279.0117431640625 104.46876L 0.1 104.46876L 0.1 104.46876zL 0.1 64.94004L 0.1 104.46876L 0.1 104.46876L 0.1 104.46876L 0.1 104.46876L 0.1 104.46876L 0.1 64.94004" cy="121.40964" cx="279.0117431640625" j="1" val="7500" barHeight="39.52872" barWidth="278.9117431640625"></path><path id="SvgjsPath1251" d="M0.1 121.40964L260.417626953125 121.40964Q260.417626953125 121.40964 260.417626953125 121.40964L260.417626953125 160.93836Q260.417626953125 160.93836 260.417626953125 160.93836L260.417626953125 160.93836L0.1 160.93836L0.1 160.93836L0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964C0.1 121.40964 0.1 121.40964 0.1 121.40964 " fill="rgba(0,143,251,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask07lrl9ni)" pathTo="M 0.1 121.40964L 260.417626953125 121.40964Q 260.417626953125 121.40964 260.417626953125 121.40964L 260.417626953125 160.93836Q 260.417626953125 160.93836 260.417626953125 160.93836L 260.417626953125 160.93836L 0.1 160.93836L 0.1 160.93836z" pathFrom="M 0.1 121.40964L 260.417626953125 121.40964Q 260.417626953125 121.40964 260.417626953125 121.40964L 260.417626953125 160.93836Q 260.417626953125 160.93836 260.417626953125 160.93836L 260.417626953125 160.93836L 0.1 160.93836L 0.1 160.93836zL 0.1 121.40964L 0.1 160.93836L 0.1 160.93836L 0.1 160.93836L 0.1 160.93836L 0.1 160.93836L 0.1 121.40964" cy="177.87923999999998" cx="260.417626953125" j="2" val="7000" barHeight="39.52872" barWidth="260.317626953125"></path><path id="SvgjsPath1253" d="M0.1 177.87923999999998L252.97998046875 177.87923999999998Q252.97998046875 177.87923999999998 252.97998046875 177.87923999999998L252.97998046875 217.40795999999997Q252.97998046875 217.40795999999997 252.97998046875 217.40795999999997L252.97998046875 217.40795999999997L0.1 217.40795999999997L0.1 217.40795999999997L0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998C0.1 177.87923999999998 0.1 177.87923999999998 0.1 177.87923999999998 " fill="rgba(0,143,251,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask07lrl9ni)" pathTo="M 0.1 177.87923999999998L 252.97998046875 177.87923999999998Q 252.97998046875 177.87923999999998 252.97998046875 177.87923999999998L 252.97998046875 217.40795999999997Q 252.97998046875 217.40795999999997 252.97998046875 217.40795999999997L 252.97998046875 217.40795999999997L 0.1 217.40795999999997L 0.1 217.40795999999997z" pathFrom="M 0.1 177.87923999999998L 252.97998046875 177.87923999999998Q 252.97998046875 177.87923999999998 252.97998046875 177.87923999999998L 252.97998046875 217.40795999999997Q 252.97998046875 217.40795999999997 252.97998046875 217.40795999999997L 252.97998046875 217.40795999999997L 0.1 217.40795999999997L 0.1 217.40795999999997zL 0.1 177.87923999999998L 0.1 217.40795999999997L 0.1 217.40795999999997L 0.1 217.40795999999997L 0.1 217.40795999999997L 0.1 217.40795999999997L 0.1 177.87923999999998" cy="234.34884" cx="252.97998046875" j="3" val="6800" barHeight="39.52872" barWidth="252.87998046875"></path><path id="SvgjsPath1255" d="M0.1 234.34884L223.22939453125002 234.34884Q223.22939453125002 234.34884 223.22939453125002 234.34884L223.22939453125002 273.87756Q223.22939453125002 273.87756 223.22939453125002 273.87756L223.22939453125002 273.87756L0.1 273.87756L0.1 273.87756L0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884C0.1 234.34884 0.1 234.34884 0.1 234.34884 " fill="rgba(0,143,251,0.85)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask07lrl9ni)" pathTo="M 0.1 234.34884L 223.22939453125002 234.34884Q 223.22939453125002 234.34884 223.22939453125002 234.34884L 223.22939453125002 273.87756Q 223.22939453125002 273.87756 223.22939453125002 273.87756L 223.22939453125002 273.87756L 0.1 273.87756L 0.1 273.87756z" pathFrom="M 0.1 234.34884L 223.22939453125002 234.34884Q 223.22939453125002 234.34884 223.22939453125002 234.34884L 223.22939453125002 273.87756Q 223.22939453125002 273.87756 223.22939453125002 273.87756L 223.22939453125002 273.87756L 0.1 273.87756L 0.1 273.87756zL 0.1 234.34884L 0.1 273.87756L 0.1 273.87756L 0.1 273.87756L 0.1 273.87756L 0.1 273.87756L 0.1 234.34884" cy="290.81844" cx="223.22939453125002" j="4" val="6000" barHeight="39.52872" barWidth="223.12939453125003"></path><g id="SvgjsG1245" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1246" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1248" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1250" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1252" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1254" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1244" class="apexcharts-datalabels" data:realIndex="0"></g></g><line id="SvgjsLine1303" x1="0" y1="0" x2="595.01171875" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1304" x1="0" y1="0" x2="595.01171875" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1305" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1306" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1307" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1232" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend" style="max-height: 175px;"></div><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(0, 143, 251);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                    <div class="widget-content widget-content-area br-8">
+                        <div id="branch-config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4"><div class="table-responsive"><table id="branch-config" class="table table-striped dt-table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="branch-config_info">
+                            <thead>
+                                <tr role="row"><th class="text-center sorting_desc" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 27px;" aria-label="#: activate to sort column ascending" aria-sort="descending">#</th><th class="text-center sorting" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 59px;" aria-label="매장: activate to sort column ascending">매장</th><th class="text-center sorting" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 61px;" aria-label="기기: activate to sort column ascending">기기</th><th class="text-center sorting" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 164px;" aria-label="판매 상품: activate to sort column ascending">판매 상품</th><th class="text-center sorting" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 105px;" aria-label="총판매 수량: activate to sort column ascending">총판매 수량</th><th class="text-center sorting" tabindex="0" aria-controls="branch-config" rowspan="1" colspan="1" style="width: 105px;" aria-label="총판매 금액: activate to sort column ascending">총판매 금액</th></tr>
+                            </thead>
+                            <tbody>
+                            <tr role="row"><td class="sorting_1"><div class="text-center">1</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">연한 아메리카노(싱글)</div></td><td><div class="text-center">7</div></td><td><div class="text-center">15400</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">2</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">연한아이스 아메리카노(싱글)</div></td><td><div class="text-center">3</div></td><td><div class="text-center">7500</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">3</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">아이스바나나 초콜릿라떼</div></td><td><div class="text-center">2</div></td><td><div class="text-center">7000</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">4</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">아이스카페모카(초코+커피)</div></td><td><div class="text-center">2</div></td><td><div class="text-center">6800</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">5</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">아이스 카페라떼</div></td><td><div class="text-center">2</div></td><td><div class="text-center">6000</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">6</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">진한 카페라떼</div></td><td><div class="text-center">2</div></td><td><div class="text-center">6000</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">7</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">카페라떼</div></td><td><div class="text-center">2</div></td><td><div class="text-center">5800</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">8</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">진한 아메리카노(더블)</div></td><td><div class="text-center">2</div></td><td><div class="text-center">5000</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">9</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">아이스 카푸치노</div></td><td><div class="text-center">1</div></td><td><div class="text-center">3300</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">10</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">아이스 초코</div></td><td><div class="text-center">1</div></td><td><div class="text-center">3000</div></td></tr><tr role="row"><td class="sorting_1"><div class="text-center">11</div></td><td><div class="text-center">휴(HEW)</div></td><td><div class="text-center">ecm0100</div></td><td><div class="text-center">진한아이스 아메리카노(더블)</div></td><td><div class="text-center">1</div></td><td><div class="text-center">2800</div></td></tr></tbody>
+                            <tfoot>
+                                <tr><th class="text-center" rowspan="1" colspan="1">#</th><th class="text-center" rowspan="1" colspan="1">매장</th><th class="text-center" rowspan="1" colspan="1">기기</th><th class="text-center" rowspan="1" colspan="1">판매 상품</th><th class="text-center" rowspan="1" colspan="1">총판매 수량</th><th class="text-center" rowspan="1" colspan="1">총판매 금액</th></tr>
+                            </tfoot>
+                        </table><div id="branch-config_processing" class="dataTables_processing card" style="display: none;">Processing...</div></div><div class="dt--bottom-section d-sm-flex justify-content-sm-between text-center"><div class="dt--pages-count  mb-sm-0 mb-3"><div class="dataTables_info" id="branch-config_info" role="status" aria-live="polite">1 / 1</div></div><div class="dt--pagination"><div class="dataTables_paginate paging_simple_numbers" id="branch-config_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="branch-config_previous"><a href="#" aria-controls="branch-config" data-dt-idx="0" tabindex="0" class="page-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="branch-config" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="branch-config_next"><a href="#" aria-controls="branch-config" data-dt-idx="2" tabindex="0" class="page-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a></li></ul></div></div></div></div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--  BEGIN FOOTER  -->
+    <div class="footer-wrapper">
+        <div class="footer-section f-section-1">
+            <p>- 에러 제보 - 제보 할 때 매장명, 기기번호, 매출 시간, 현상, 동영상을 첨부하면 분석이 쉽습니다. manager@order-app.us</p>
+            <!-- <p class="">Copyright © <span class="dynamic-year">2022</span> 민성, All rights reserved.</p> -->
+        </div>
+    </div>
+    <!--  END FOOTER  -->
+</div>
+<!--  END CONTENT AREA  -->
+
+</div>
+<script src="https://euro.order-app.us/static/assets/js/slave/sales_product.js?v=230817002"></script>
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="https://euro.order-app.us/static/layouts/vertical-light-menu/app.js"></script>
+    <script src="https://euro.order-app.us/static/src/plugins/src/apex/apexcharts.min.js"></script>
+    <script src="https://euro.order-app.us/static/src/assets/js/custom.js"></script>
+    <script src="https://euro.order-app.us/static/src/plugins/src/table/datatable/datatables.js"></script>
+    <script src="https://euro.order-app.us/static/src/plugins/src/flatpickr/flatpickr.js"></script>
+    <script src="https://euro.order-app.us/static/assets/js/base.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+  <span class="flatpickr-weekday">
+    Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+  </span>
+  </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="October 29, 2023" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="October 30, 2023" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="October 31, 2023" tabindex="-1">31</span><span class="flatpickr-day " aria-label="November 1, 2023" tabindex="-1">1</span><span class="flatpickr-day today" aria-label="November 2, 2023" aria-current="date" tabindex="-1">2</span><span class="flatpickr-day " aria-label="November 3, 2023" tabindex="-1">3</span><span class="flatpickr-day " aria-label="November 4, 2023" tabindex="-1">4</span><span class="flatpickr-day " aria-label="November 5, 2023" tabindex="-1">5</span><span class="flatpickr-day " aria-label="November 6, 2023" tabindex="-1">6</span><span class="flatpickr-day " aria-label="November 7, 2023" tabindex="-1">7</span><span class="flatpickr-day " aria-label="November 8, 2023" tabindex="-1">8</span><span class="flatpickr-day " aria-label="November 9, 2023" tabindex="-1">9</span><span class="flatpickr-day " aria-label="November 10, 2023" tabindex="-1">10</span><span class="flatpickr-day " aria-label="November 11, 2023" tabindex="-1">11</span><span class="flatpickr-day " aria-label="November 12, 2023" tabindex="-1">12</span><span class="flatpickr-day " aria-label="November 13, 2023" tabindex="-1">13</span><span class="flatpickr-day " aria-label="November 14, 2023" tabindex="-1">14</span><span class="flatpickr-day " aria-label="November 15, 2023" tabindex="-1">15</span><span class="flatpickr-day " aria-label="November 16, 2023" tabindex="-1">16</span><span class="flatpickr-day " aria-label="November 17, 2023" tabindex="-1">17</span><span class="flatpickr-day " aria-label="November 18, 2023" tabindex="-1">18</span><span class="flatpickr-day " aria-label="November 19, 2023" tabindex="-1">19</span><span class="flatpickr-day " aria-label="November 20, 2023" tabindex="-1">20</span><span class="flatpickr-day " aria-label="November 21, 2023" tabindex="-1">21</span><span class="flatpickr-day " aria-label="November 22, 2023" tabindex="-1">22</span><span class="flatpickr-day " aria-label="November 23, 2023" tabindex="-1">23</span><span class="flatpickr-day " aria-label="November 24, 2023" tabindex="-1">24</span><span class="flatpickr-day " aria-label="November 25, 2023" tabindex="-1">25</span><span class="flatpickr-day " aria-label="November 26, 2023" tabindex="-1">26</span><span class="flatpickr-day " aria-label="November 27, 2023" tabindex="-1">27</span><span class="flatpickr-day " aria-label="November 28, 2023" tabindex="-1">28</span><span class="flatpickr-day " aria-label="November 29, 2023" tabindex="-1">29</span><span class="flatpickr-day " aria-label="November 30, 2023" tabindex="-1">30</span><span class="flatpickr-day nextMonthDay" aria-label="December 1, 2023" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="December 2, 2023" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="December 3, 2023" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="December 4, 2023" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="December 5, 2023" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="December 6, 2023" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="December 7, 2023" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="December 8, 2023" tabindex="-1">8</span><span class="flatpickr-day nextMonthDay" aria-label="December 9, 2023" tabindex="-1">9</span></div></div></div></div></div><div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+  <span class="flatpickr-weekday">
+    Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
+  </span>
+  </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="October 29, 2023" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="October 30, 2023" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="October 31, 2023" tabindex="-1">31</span><span class="flatpickr-day " aria-label="November 1, 2023" tabindex="-1">1</span><span class="flatpickr-day today" aria-label="November 2, 2023" aria-current="date" tabindex="-1">2</span><span class="flatpickr-day " aria-label="November 3, 2023" tabindex="-1">3</span><span class="flatpickr-day " aria-label="November 4, 2023" tabindex="-1">4</span><span class="flatpickr-day " aria-label="November 5, 2023" tabindex="-1">5</span><span class="flatpickr-day " aria-label="November 6, 2023" tabindex="-1">6</span><span class="flatpickr-day " aria-label="November 7, 2023" tabindex="-1">7</span><span class="flatpickr-day " aria-label="November 8, 2023" tabindex="-1">8</span><span class="flatpickr-day " aria-label="November 9, 2023" tabindex="-1">9</span><span class="flatpickr-day " aria-label="November 10, 2023" tabindex="-1">10</span><span class="flatpickr-day " aria-label="November 11, 2023" tabindex="-1">11</span><span class="flatpickr-day " aria-label="November 12, 2023" tabindex="-1">12</span><span class="flatpickr-day " aria-label="November 13, 2023" tabindex="-1">13</span><span class="flatpickr-day " aria-label="November 14, 2023" tabindex="-1">14</span><span class="flatpickr-day " aria-label="November 15, 2023" tabindex="-1">15</span><span class="flatpickr-day " aria-label="November 16, 2023" tabindex="-1">16</span><span class="flatpickr-day " aria-label="November 17, 2023" tabindex="-1">17</span><span class="flatpickr-day " aria-label="November 18, 2023" tabindex="-1">18</span><span class="flatpickr-day " aria-label="November 19, 2023" tabindex="-1">19</span><span class="flatpickr-day " aria-label="November 20, 2023" tabindex="-1">20</span><span class="flatpickr-day " aria-label="November 21, 2023" tabindex="-1">21</span><span class="flatpickr-day " aria-label="November 22, 2023" tabindex="-1">22</span><span class="flatpickr-day " aria-label="November 23, 2023" tabindex="-1">23</span><span class="flatpickr-day " aria-label="November 24, 2023" tabindex="-1">24</span><span class="flatpickr-day " aria-label="November 25, 2023" tabindex="-1">25</span><span class="flatpickr-day " aria-label="November 26, 2023" tabindex="-1">26</span><span class="flatpickr-day " aria-label="November 27, 2023" tabindex="-1">27</span><span class="flatpickr-day " aria-label="November 28, 2023" tabindex="-1">28</span><span class="flatpickr-day " aria-label="November 29, 2023" tabindex="-1">29</span><span class="flatpickr-day " aria-label="November 30, 2023" tabindex="-1">30</span><span class="flatpickr-day nextMonthDay" aria-label="December 1, 2023" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="December 2, 2023" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="December 3, 2023" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="December 4, 2023" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="December 5, 2023" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="December 6, 2023" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="December 7, 2023" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="December 8, 2023" tabindex="-1">8</span><span class="flatpickr-day nextMonthDay" aria-label="December 9, 2023" tabindex="-1">9</span></div></div></div></div></div></body></html>
